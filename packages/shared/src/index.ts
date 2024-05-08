@@ -1,0 +1,1 @@
+export var calc = (a: number, b:number):number => a*b
