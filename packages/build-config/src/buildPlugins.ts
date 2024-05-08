@@ -25,7 +25,6 @@ export var buildPlugins = (options: BuildOptions):Configuration['plugins'] => {
     ]
 
     if(isDev) {
-        if(options.loader === 'typescript')
             plugins.push(new ReactRefreshTypeScript())
     } else {
         // plugins.push(new ForkTsCheckerWebpackPlugin())
