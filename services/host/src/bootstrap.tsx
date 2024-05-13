@@ -1,13 +1,16 @@
-import {createRoot} from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { App } from './App'
-import { BrowserRouter, RouterProvider } from 'react-router-dom'
-import { router } from './router/AppRouter'
+import { BrowserRouter } from 'react-router-dom'
 
-var root = document.getElementById('root')
-
-if(!root) {
+var container = document.getElementById('root')
+if(!container) {
     throw new Error('No root')
 }
 
-createRoot(root).render(<RouterProvider router={router}/>)
+var root = createRoot(container)
+root.render(
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+)
 

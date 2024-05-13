@@ -1,7 +1,7 @@
 import { Configuration, container } from "webpack"
 import { BuildLoader, BuildMode, BuildPaths, BuildPlatform, buildWebpack } from "@packages/build-config/src/index"
 import path from 'path'
-import PackageJson from '../test/package.json'
+import PackageJson from '../shop/package.json'
 
 interface EnvVariables {
     mode?: BuildMode

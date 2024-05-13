@@ -33,7 +33,7 @@ export default (env: EnvVariables):Configuration => {
     //     name: 'admin',
     //     filename: 'remoteEntry.js',
     //     exposes: {
-    //         './Router': './src/router/AppRouter.tsx'
+    //         './Application': './src/applicationApi.ts'
     //     },
     //     shared: {
     //         ...PackageJson.dependencies,

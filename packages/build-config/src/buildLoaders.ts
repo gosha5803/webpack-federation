@@ -30,7 +30,7 @@ export var buildLoaders = (options: BuildOptions):ModuleOptions['rules'] => {
             loader: 'esbuild-loader',
             options: {
                 target: 'es2015',
-                tsconfig: paths.tsconfig
+                // tsconfig: paths.tsconfig
             }
         },
         babel: buildBabelLoader(options),
@@ -93,8 +93,7 @@ export var buildLoaders = (options: BuildOptions):ModuleOptions['rules'] => {
     return [
         assetsLoader, 
         sassLoader,
-        jsLoaders[options.loader],
-        // babelLoader, 
+        jsLoaders[options.loader] ?? jsLoaders['esBuild'],
         svgLoader
     ]
 }

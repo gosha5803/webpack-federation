@@ -35,31 +35,31 @@ export default (env: EnvVariables):Configuration => {
         loader: env.loader ?? 'esBuild'
     })
 
-    config.plugins.push(new container.ModuleFederationPlugin({
-        name: 'host',
-        filename: 'remoteEntry.js',
+    // config.plugins.push(new container.ModuleFederationPlugin({
+    //     name: 'host',
+    //     filename: 'remoteEntry.js',
 
-        remotes: {
-            shop: `shop@${SHOP_REMOTE_URL}/remoteEntry.js`,
-            admin: `admin@${ADMIN_REMOTE_URL}/remoteEntry.js`
-        },
+    //     remotes: {
+    //         shop: `shop@${SHOP_REMOTE_URL}/remoteEntry.js`,
+    //         admin: `admin@${ADMIN_REMOTE_URL}/remoteEntry.js`
+    //     },
 
-        shared: {
-            ...PackageJson.dependencies,
-            react: {
-                eager: true,
-                requiredVersion: PackageJson.dependencies['react']
-            },
-            'react-router-dom': {
-                eager: true,
-                requiredVersion: PackageJson.dependencies['react-router-dom']
-            },
-            'react-dom': {
-                eager: true,
-                requiredVersion: PackageJson.dependencies['react-dom']
-            }
-        }
-    }))
+    //     shared: {
+    //         ...PackageJson.dependencies,
+    //         react: {
+    //             eager: true,
+    //             requiredVersion: PackageJson.dependencies['react']
+    //         },
+    //         'react-router-dom': {
+    //             eager: true,
+    //             requiredVersion: PackageJson.dependencies['react-router-dom']
+    //         },
+    //         'react-dom': {
+    //             eager: true,
+    //             requiredVersion: PackageJson.dependencies['react-dom']
+    //         }
+    //     }
+    // }))
 
     return config
 }

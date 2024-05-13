@@ -2,30 +2,17 @@ import { App } from "@/App";
 import { FC, Suspense } from "react";
 import { Route, Routes, createBrowserRouter } from "react-router-dom";
 //@ts-ignore
-import shopRoutes from 'shop/Router'
+// import ShopApp from 'shop/Application'
 //@ts-ignore
-import adminRoutes from 'admin/Router'
-// import { LazyShopPage } from "../Pages/ShopPage.lazy";
-// import { LazyAboutPage } from "../Pages/AboutPage.lazy";
+// import AdminApp from 'admin/Application'
 
-// export var AppRouter:FC = () => {
-//     return(
-//         <Suspense fallback={'Loading...'}>
-//             <Routes>
-//                     {/* <Route path="/shop" element={<LazyShopPage/>}/> */}
-//                     {/* <Route path="/about" element={<LazyAboutPage/>}/> */}
-//             </Routes>
-//         </Suspense>
-//     )
-// }
-
-export var router = createBrowserRouter([
-    {
-        path: '/',
-        element: <App/>,
-        children: [
-            ...shopRoutes,
-            ...adminRoutes
-        ]
-    }
-])
+export var AppRouter:FC = () => {
+    return(
+        <Suspense fallback={'Loading...'}>
+            <Routes>
+                    {/* <Route path="/admin/*" element={<AdminApp/>}/> */}
+                    {/* <Route path="/shop/*" element={<ShopApp/>}/> */}
+            </Routes>
+        </Suspense>
+    )
+}
